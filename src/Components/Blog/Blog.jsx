@@ -3,7 +3,7 @@ import { IoBookmarksOutline } from "react-icons/io5";
 
 const Blog = ({ blog,handleAddToBookmarks,handleAddTimeToBookmarks }) => {
     // console.log(blog);
-    const {cover,author,author_img,title,reading_time,posted_date,hashtag} = blog
+    const {cover,author,author_img,title,reading_time,posted_date,hashtag,id} = blog
     return (
         <div className='mb-20 space-y-4'>
             <img className='w-full rounded-md mb-8' src={cover} alt={`cover picture of the title of ${title}`} />
@@ -32,7 +32,7 @@ const Blog = ({ blog,handleAddToBookmarks,handleAddTimeToBookmarks }) => {
                     hashtag.map((hash,idx) => <span key={idx} className='text-green-500'><a href="">{hash}</a></span>)
                 }
             </p>
-            <button onClick={()=>handleAddTimeToBookmarks(reading_time)} className='text-green-700 border-b-2 border-green-700'>Mark As Read</button>
+            <button onClick={()=>handleAddTimeToBookmarks(reading_time,id)} className='text-green-700 border-b-2 border-green-700'>Mark As Read</button>
         </div>
     );
 };
